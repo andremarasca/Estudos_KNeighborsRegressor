@@ -48,7 +48,10 @@ X_test = scaler_previsores.transform(X_test)
 
 #%% modelo
 
-model = KNeighborsRegressor(n_neighbors=2)
+from sklearn.neural_network import MLPRegressor
+ 
+# model = KNeighborsRegressor(n_neighbors=2)
+model = MLPRegressor(n_neighbors=2)
 
 model.fit(X_train, y_train)
 
