@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn import metrics
 from sklearn import model_selection as ms
-
+from regressao_knn import RegressaoKnn
 
 def real_brazilian_to_float(numeric_string):
     """Converte valores numérios no formato brasileiro 1.234,56 para float"""
@@ -66,7 +66,8 @@ class ConsumoCerveja:
         X_test = self.X_test
         y_test = self.y_test
 
-        model = KNeighborsRegressor(n_neighbors=n_neighbors)
+        # model = KNeighborsRegressor(n_neighbors=n_neighbors)
+        model = RegressaoKnn(n_neighbors=n_neighbors)
 
         model.fit(X_train, y_train)
 
